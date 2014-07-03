@@ -5,8 +5,7 @@ public class Users {
 	private String id;
 	private String password;
 	private String name;
-	private String role;
-	
+	private String role;	
 		
 	public Users(String id, String password, String name, String role) {
 		super();
@@ -16,17 +15,13 @@ public class Users {
 		this.role = role;
 	}
 
-
 	public Users() {
-		super();
-		// TODO Auto-generated constructor stub
+		super();	
 	}
-
 
 	public String getId() {
 		return id;
 	}
-
 
 	public void setId(String id) {
 		this.id = id;
@@ -59,6 +54,5 @@ public class Users {
 	public String toString(){
 		return new StringBuilder().append(id).append(" | " ).append(password).append(" | " )
 				.append(name).append(" | " ).toString();
-	}
-	
+	}	
 }

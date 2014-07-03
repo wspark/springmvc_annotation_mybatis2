@@ -3,7 +3,6 @@ package com.biz.user.service;
 import java.util.ArrayList;
 
 import com.biz.user.dao.UserDAOIF;
-import com.biz.user.dao.UserDAOImpl;
 import com.biz.user.vo.Users;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +13,6 @@ public class UserServiceImpl implements UserServiceIF {
 
 	@Autowired
 	private UserDAOIF userDAO;
-//	private UserDAOIF userDAO = new UserDAOImpl();
-	
-//	public UserServiceImpl(UserDAOIF userDAO){
-//		this.userDAO = userDAO;
-//	}
 
 	@Override
 	public void addUser(Users user) throws Exception {
@@ -35,8 +29,7 @@ public class UserServiceImpl implements UserServiceIF {
 	@Override
 	public void deleteUser(String id)  throws Exception{
 		int row = userDAO.deleteUser(id);
-		if( row < 0 ) throw new Exception("삭제실패 :"+id);
-		
+		if( row < 0 ) throw new Exception("삭제실패 :"+id);		
 	}
 
 	@Override

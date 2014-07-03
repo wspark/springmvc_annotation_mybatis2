@@ -22,15 +22,12 @@ public class LoginController {
 	@RequestMapping("/login.do")
 	public String login(@RequestParam("id") String id, @RequestParam("password") String password,HttpServletRequest request,Model model) throws Exception {
 				
-		String nextPage=null;	
-		//business method call
+		String nextPage=null;		
 		boolean isExist = false;
 	
-			try {
-			//	System.out.println("id" = +
+			try {		
 				isExist = (boolean)service.login(id, password);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
+			} catch (Exception e) {				
 				e.printStackTrace();
 			}
 			System.out.println("isExist = "  + isExist);
