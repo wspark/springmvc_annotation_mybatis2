@@ -1,35 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
+	<mvc:annotation-driven />
+	<context:component-scan base-package="com.controller"/>
 
-	<bean id="handlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-	<property name="mappings">
-		<props>
-			<prop key="login.do">login</prop>
-			<prop key="logout.do">logout</prop>
-			<prop key="list.do">list</prop>
-			<prop key="view.do">view</prop>
-			<prop key="update.do">update</prop>
-			<prop key="delete.do">delete</prop>
-			<prop key="input.do">input</prop>
-			<prop key="save.do">save</prop>
-		</props>
-	</property>
-	</bean>
-	
-	<bean id="login" class="com.controller.LoginCommand"></bean>
-	<bean id="logout" class="com.controller.LogoutCommand"></bean>
-	<bean id="list" class="com.controller.ListCommand"></bean>
-	<bean id="view" class="com.controller.ViewCommand"></bean>
-	<bean id="update" class="com.controller.UpdateCommand"></bean>
-	<bean id="delete" class="com.controller.DeleteCommand"></bean>
-	<bean id="input" class="com.controller.InputCommand"></bean>
-	<bean id="save" class="com.controller.SaveCommand"></bean>
-	
 	<bean id="viewResolve" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		 <property name="prefix" value="/WEB-INF/view/"/>
     	 <property name="suffix" value=".jsp"/>		
-	</bean>
+	</bean>	
 </beans>

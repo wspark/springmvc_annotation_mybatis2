@@ -2,20 +2,19 @@ package com.biz.user.service;
 
 import java.util.ArrayList;
 
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Service;
-
-
-
 import com.biz.user.dao.UserDAOIF;
 import com.biz.user.dao.UserDAOImpl;
 import com.biz.user.vo.Users;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserServiceIF {
 
-	
-	private UserDAOIF userDAO = new UserDAOImpl();
+	@Autowired
+	private UserDAOIF userDAO;
+//	private UserDAOIF userDAO = new UserDAOImpl();
 	
 //	public UserServiceImpl(UserDAOIF userDAO){
 //		this.userDAO = userDAO;

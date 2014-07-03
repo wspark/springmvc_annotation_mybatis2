@@ -4,16 +4,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
-//import org.springframework.stereotype.Repository;
-
-import com.biz.common.JDBCUtil;
 import com.biz.user.vo.Users;
 import com.ibatis.sqlmap.client.SqlMapClient;
+import org.springframework.stereotype.Repository;
+import com.biz.common.JDBCUtil;
 
-//@Repository("userDAO")
+@Repository
 public class UserDAOImpl implements UserDAOIF {
-
 	
 	@Override
 	public int insertUser(Users user) {
